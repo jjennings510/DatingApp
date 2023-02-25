@@ -6,7 +6,8 @@
                 <button routerLink="/members/{{member.userName}}" class="btn btn-primary me-1"><i
                         class="fa fa-user"></i></button>
                 <button class="btn btn-primary me-1" (click)="addLike(member)"><i class="fa fa-heart"></i></button>
-                <button class="btn btn-primary me-1"><i class="fa fa-envelope"></i></button>
+                <button routerLink="/members/{{member.userName}}" class="btn btn-primary me-1" [queryParams]="{tab: 'Messages'}">
+                    <i class="fa fa-envelope"></i></button>
             </li>
         </ul>
     </div>
