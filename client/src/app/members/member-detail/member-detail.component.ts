@@ -1,3 +1,4 @@
+import { PresenceService } from './../../_services/presence.service';
 import { MessageService } from './../../_services/message.service';
 import { MembersService } from './../../_services/members.service';
 import { Member } from './../../_models/member';
@@ -19,7 +20,8 @@ export class MemberDetailComponent implements OnInit {
   activeTab?: TabDirective;
   messages: Message[] = [];
 
-  constructor(private memberService: MembersService, private route: ActivatedRoute, private messageService: MessageService) { }
+  constructor(private memberService: MembersService, private route: ActivatedRoute, 
+    private messageService: MessageService, public presenceService: PresenceService) { }
 
   ngOnInit(): void {
     this.route.data.subscribe({
